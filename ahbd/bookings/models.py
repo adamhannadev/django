@@ -17,13 +17,13 @@ class Student(models.Model):
         return self.last_name
 
 class Lesson(models.Model):
-    lesson_date = models.DateTimeField(auto_now_add=True)
-    plan = models.TextField()
+    lesson_date = models.DateTimeField()
+    notes = models.TextField()
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.lesson_date
+        return str(self.lesson_date)
 
     class Meta:
         ordering = ['lesson_date']
