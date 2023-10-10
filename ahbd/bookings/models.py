@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Student(models.Model):
+class Person(models.Model):
     first_name = models.CharField(max_length=42)
     last_name = models.CharField(max_length=42)
     email = models.EmailField(max_length=75)
@@ -15,6 +15,9 @@ class Student(models.Model):
         
     def __str__(self):
         return self.last_name
+
+class Student(Person):
+    teacher = models.CharField(max_length=42)
 
 class Lesson(models.Model):
     lesson_date = models.DateTimeField()

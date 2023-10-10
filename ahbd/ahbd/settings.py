@@ -123,4 +123,4 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CSRF_TRUSTED_ORIGINS = ['https://glorious-garbanzo-qpp5wg5v76w3rg4.github.dev/', 'https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://glorious-garbanzo-qpp5wg5v76w3rg4.github.dev', 'https://*.127.0.0.1', 'https://localhost:8000']
