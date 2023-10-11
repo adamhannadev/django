@@ -16,14 +16,18 @@ class Person(models.Model):
     def __str__(self):
         return self.last_name
 
+class Teacher(Person):
+    pass
+
 class Student(Person):
-    teacher = models.CharField(max_length=42)
+    main_teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
 
 class Lesson(models.Model):
     lesson_date = models.DateTimeField()
     notes = models.TextField()
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.lesson_date)
