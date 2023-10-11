@@ -38,6 +38,9 @@
       margin:0px;
       align-content: stretch;
     }
+    {% for l in lessons %}
+      {{l}}
+    {% endfor %}
   </style>
 </head>
 <body>
@@ -47,7 +50,7 @@
       <div class="calendar-week-view-day-header">{{day}}</div>
       <div class="calendar-week-view-day-events">
         {% for bl in times %}
-        <div class="time">{{bl}}</div>
+        <div class="time" id="{{bl}}">{{bl}}</div>
             {% for n in '1234' %}
             <div class="quarter-hour"></div>
             {% endfor %}
@@ -56,4 +59,6 @@
     </div>
     {% endfor %}
 </div>
-
+{% for l in lessons %}
+  {{l}}
+{% endfor %}
