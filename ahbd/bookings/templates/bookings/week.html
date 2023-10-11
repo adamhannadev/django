@@ -1,1 +1,59 @@
-html5
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendar Week View</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .calendar-week-view {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap: 10px;
+    }
+
+    .calendar-week-view-day {
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 5px;
+      box-shadow: 5px 5px 5px #888888;
+    }
+
+    .calendar-week-view-day-header {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 5px;
+    }
+
+    .calendar-week-view-day-events {
+      list-style: none;
+      margin-bottom: 0;
+    }
+
+    .calendar-week-view-day-event {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="calendar-week-view">
+    <div class="calendar-week-view-day">
+      <div class="calendar-week-view-day-header">Monday</div>
+      <ul class="calendar-week-view-day-events">
+        <li>9:00 AM - 10:00 AM: Meeting with John</li>
+        <li>11:00 AM - 12:00 PM: Lunch with Mary</li>
+        <li>1:00 PM - 2:00 PM: Work on project X</li>
+      </ul>
+    </div>
+    <div class="calendar-week-view-day">
+      <div class="calendar-week-view-day-header">Tuesday</div>
+      <ul class="calendar-week-view-day-events">
+        <li>10:00 AM - 11:00 AM: Meeting with Jane</li>
+        <li>12:00 PM - 1:00 PM: Lunch with Bob</li>
+        <li>2:00 PM - 3:00 PM: Work on project Y</li>
+      </ul>
+    </div>
+    <div class="calendar-week-view-day">
+
+
