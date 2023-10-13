@@ -64,21 +64,25 @@
   </style>
 </head>
 <body>
+{{ lesson_times }}
+{{ times }}
+{{ lessons }}
+</body>
+<!-- <body>
   <div class="calendar-week-view">
     {% for day in week %}
     <div class="calendar-week-view-day">
       <div class="calendar-week-view-day-header">{{day}}</div>
       <div class="calendar-week-view-day-events">
-        {% for bl in times %}
+        {% for slot in times %}
         {% for lesson_time in lesson_times %}
-        {% if bl == lesson_time %}
+        {% if slot == lesson_time %}
         <div class="booked_time">{{bl}}</div>
             {% for n in '1234' %}
             <div class="quarter-hour" id="booked"></div>
             {% endfor %}
-  
           {% else %}
-          <div class="not_booked_time" id="{{bl}}">{{bl}}</div>
+          <div class="not_booked_time" id="{{slot}}">{{slot}}</div>
             {% for n in '1234' %}
             <div class="quarter-hour"></div>
             {% endfor %}
@@ -88,4 +92,6 @@
       </div>
     </div>
     {% endfor %}
-</div>
+</div> -->
+</body>
+</html>

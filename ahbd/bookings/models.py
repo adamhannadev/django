@@ -30,7 +30,7 @@ class Lesson(models.Model):
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.lesson_date)
+        return str(f"{self.student} - {self.lesson_date.date()} @ {self.lesson_date.time()}" )
 
     class Meta:
         ordering = ['lesson_date']

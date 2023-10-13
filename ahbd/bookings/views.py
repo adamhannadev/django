@@ -16,6 +16,7 @@ def calendar(request):
         request,
         "bookings/week.html",
         {
+            "lessons": lessons,
             "times": times,
             "lesson_times": list(lesson_times),
             "week": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
