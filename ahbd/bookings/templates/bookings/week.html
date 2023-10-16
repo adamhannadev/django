@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Calendar Week View</title>
   <style>
     body {
       font-family: sans-serif;
-      background-color:white;
+      background-color: white;
     }
 
     .calendar-week-view {
@@ -20,6 +21,7 @@
       border-radius: 5px;
       box-shadow: 5px 5px 5px #888888;
     }
+
     .calendar-week-view-day:hover {
       padding: 2px;
       background-color: rgb(209, 209, 255);
@@ -39,59 +41,60 @@
       list-style: none;
       margin-bottom: 0;
     }
-    .calendar-week-view-day-events > .quarter-hour {
+
+    .calendar-week-view-day-events>.quarter-hour {
       margin-bottom: 5px;
       background-color: azure;
       font-size: x-small;
       border: 1px solid gray;
       padding: 10px;
-      margin:0px;
+      margin: 0px;
       align-content: stretch;
     }
+
     .lesson {
+      width:1fr;
       padding: 2px;
       background-color: rgb(125, 125, 255);
       border: 1px solid #2e2381;
       border-radius: 5px;
       box-shadow: 5px 5px 5px #888888;
     }
-    .booked_time{
+
+    .booked_time {
       background-color: #ada3ff;
     }
+
     #booked {
       background-color: #ada3ff;
     }
   </style>
 </head>
+
 <body>
-{{ lesson_times }}
-{{ times }}
-{{ lessons }}
-</body>
-<!-- <body>
+  {% for l in lessons %}
+  <div class="lesson">
+    <div class="lesson_date">{{l.lesson_date.date }}</div>
+    <div class="student">{{ l.student.last_name }}</div>
+    <div class="lesson_time">{{ l.lesson_date.time }}</div>
+  </div>
+{% endfor %}
+
+
   <div class="calendar-week-view">
-    {% for day in week %}
+    {% for day in days %}
     <div class="calendar-week-view-day">
-      <div class="calendar-week-view-day-header">{{day}}</div>
+      <div class="calendar-week-view-day-header" id="{{day.date}}">{{day.date}}</div>
       <div class="calendar-week-view-day-events">
         {% for slot in times %}
-        {% for lesson_time in lesson_times %}
-        {% if slot == lesson_time %}
-        <div class="booked_time">{{bl}}</div>
-            {% for n in '1234' %}
-            <div class="quarter-hour" id="booked"></div>
-            {% endfor %}
-          {% else %}
-          <div class="not_booked_time" id="{{slot}}">{{slot}}</div>
+        <div class="booked_time" id="slot">{{slot}}</div>
             {% for n in '1234' %}
             <div class="quarter-hour"></div>
             {% endfor %}
-            {% endif %}
-        {% endfor %}
         {% endfor %}
       </div>
     </div>
     {% endfor %}
-</div> -->
+</div>
 </body>
 </html>

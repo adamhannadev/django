@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from datetime import datetime
+import pandas as pd
 from bookings.models import Lesson
 
 def calendar(request):
@@ -12,10 +13,14 @@ def calendar(request):
         return lesson.lesson_date.strftime("%I:%M %p")
     lessons = Lesson.objects.all()
     lesson_times = map(return_formatted_time, lessons)
+    week_start = datetime.now()
+    datelist = pd.date_range(week_start, periods=7).tolist()
+    formatted_dates = map(return_formatted_time, datelist)
     return render(
         request,
         "bookings/week.html",
         {
+            "days": datelist,
             "lessons": lessons,
             "times": times,
             "lesson_times": list(lesson_times),
