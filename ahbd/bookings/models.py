@@ -24,6 +24,7 @@ class Student(Person):
 
 class Lesson(models.Model):
     lesson_date = models.DateTimeField()
+    duration = models.IntegerField(default=60)
     notes = models.TextField()
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
