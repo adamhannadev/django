@@ -6,7 +6,7 @@ from bookings.models import Student
 from bookings.models import Teacher
 
 class LessonsAdmin(admin.ModelAdmin):
-    fields= ["lesson_date", "student", "teacher", "notes"]
+    fields= ["lesson_date", "student", "teacher", "duration"]
 
 class StudentsAdmin(admin.ModelAdmin):
     pass

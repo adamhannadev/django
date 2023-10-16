@@ -55,17 +55,13 @@
     .lesson {
       width:1fr;
       padding: 2px;
-      background-color: rgb(125, 125, 255);
+      background-color: rgb(255, 255, 255);
       border: 1px solid #2e2381;
       border-radius: 5px;
       box-shadow: 5px 5px 5px #888888;
     }
 
-    .booked_time {
-      background-color: #ada3ff;
-    }
-
-    #booked {
+    .booked {
       background-color: #ada3ff;
     }
   </style>
@@ -80,13 +76,20 @@
   </div>
 {% endfor %}
 
-Days is:
-{{ days }}<br><br>
-Times is:
-{{ times }}<br><br>
-Lessons is:
-{{lessons}}<br><Br>
-Lesson Times is:
-{{lesson_times}}<br><br>
+<div class="calendar-week-view">
+  <div class="calendar-week-view-day">
+    <div class="calendar-week-view-day-header">{{ today }}</div>
+    <div class="calendar-week-view-day-events">
+      {% for block in time_blocks %}
+        <div class="lesson {{block.booked}}">
+          {{block.start}}
+          {{block.student}}
+          {{block.lesson_date.time}}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
