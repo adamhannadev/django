@@ -75,12 +75,12 @@
     <div class="lesson_time">{{ l.lesson_date.time }}</div>
   </div>
 {% endfor %}
-
+{{time_blocks}}
 <div class="calendar-week-view">
   <div class="calendar-week-view-day">
     <div class="calendar-week-view-day-header">{{ today }}</div>
     <div class="calendar-week-view-day-events">
-      {% for block in time_blocks %}
+      {% for block in time_blocks %} 
         <div class="lesson {{block.booked}}">
           {{block.start}}
           {{block.student}}
