@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from datetime import datetime, timedelta
 from bookings.models import Lesson
-import pandas as pd
 
 def calendar(request):
     # Render the weekly calendar view
@@ -19,7 +18,7 @@ def calendar(request):
         # For each lesson returned create a dictionary with keys 'start', and 'duration'
         time_blocks = []
         for lesson in lessons:
-            time_blocks.append({'start': lesson.lesson_date,
+            time_blocks.append({
                                 'lesson_date': lesson.lesson_date, 
                                 'duration': lesson.duration, 
                                 'booked': 'booked',
@@ -44,13 +43,16 @@ def calendar(request):
             datetime_range(hour_rounder(datetime.now()) - timedelta(hours=8), datetime.now() + timedelta(hours=5), 
             timedelta(minutes=15))]
 
+        booked_times = []
+        
+        for l in lessons:
+            for time in dts:
+                if time > l.lesson_date and time < l.lesson_date + timedelta(minutes=l.duration):
+                    booked_times.append(time)
+            
+        free_times = filter(lambda t: t not in booked_times, dts)
 
-        for hour in dts:
-            for t in time_blocks:
-                if hour.hour < t['start'].hour or hour.hour > (t['start'].hour + (t['duration'] / 60)):
-                    time_blocks.append({'start': hour, 'duration': 15, 'booked': ''})
-
-        return time_blocks
+        return list(free_times)
 
         
     time_blocks = build_time_blocks(datetime.now())
