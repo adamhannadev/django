@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from bookings.views import calendar
+from bookings.views import week_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", calendar)
+    path("week/<str:starting_day>", week_view)
 ]

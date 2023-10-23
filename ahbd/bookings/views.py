@@ -2,14 +2,17 @@ from django.shortcuts import render
 from datetime import datetime, timedelta
 from bookings.models import Lesson
 
-def calendar(request):
+def week_view(request, starting_day):
     # Render the weekly calendar view
     # Find the first day of the current week
     # Get a list of all current lessons
     # Create a list of all time blocks for a each day including, time: time, duration: int, booked: boolean
     
+    # datetime.datetime.strftime(now, "%B-%m-%Y")
+
     def first_day_of_week(date):
         # Return the first day of the week of the date passed in
+
         return date - timedelta(days=date.isoweekday() % 7)
 
     def build_time_blocks(day):
@@ -41,7 +44,7 @@ def calendar(request):
 
 
         dts = [dt for dt in 
-            datetime_range(hour_rounder(day) - timedelta(hours=8), day + timedelta(hours=5), 
+            datetime_range(day + timedelta(hours=7), day + timedelta(hours=22), 
             timedelta(minutes=15))]
 
         booked_times = []
@@ -58,7 +61,7 @@ def calendar(request):
 
         return  sorted(time_blocks, key=lambda x:x['lesson_date'])
 
-    week_dates = [first_day_of_week(datetime.now()) + timedelta(days=x) for x in range(7)]
+    week_dates = [first_day_of_week(datetime.strptime(starting_day, "%B-%d-%Y")) + timedelta(days=x) for x in range(7)]
     week_days = ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     this_week = []
 
