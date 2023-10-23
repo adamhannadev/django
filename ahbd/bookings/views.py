@@ -49,7 +49,7 @@ def week_view(request, week_number):
 
         return  sorted(time_blocks, key=lambda x:x['lesson_date'])
     
-    
+
     week_start = datetime.fromisocalendar(2023, week_number, 1)
     week_dates = [week_start + timedelta(days=x) for x in range(7)]
     week_days = ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -68,6 +68,9 @@ def week_view(request, week_number):
         request,
         "bookings/week.html",
         {
+            'week_number': week_number,
+            'next_week': week_number + 1,
+            'last_week': week_number - 1,
             'today': datetime.now().date,
             'time_blocks': time_blocks,
             'day_numbers': range(7),

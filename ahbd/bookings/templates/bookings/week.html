@@ -65,10 +65,17 @@
       background-color: hsl(247, 100%, 82%);
       border-bottom: 1px solid white;
     }
+    .buttons {
+      margin-bottom:15px;
+    }
   </style>
 </head>
 
 <body>
+  <div class="buttons">
+    <a href="http://127.0.0.1:8000/week/{{last_week}}"><button><</button></a>
+    <a href="http://127.0.0.1:8000/week/{{next_week}}"><button>></button></a>
+  </div>
 
 <div class="calendar-week-view">
   {% for day in week %}
