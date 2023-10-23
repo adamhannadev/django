@@ -20,5 +20,5 @@ from bookings.views import week_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("week/<str:starting_day>", week_view)
+    path("week/<int:week_number>", week_view)
 ]
