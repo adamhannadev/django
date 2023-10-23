@@ -53,43 +53,41 @@
     }
 
     .lesson {
+      font-size:0.8rem;
       width:1fr;
       padding: 2px;
       background-color: rgb(255, 255, 255);
-      border: 1px solid #2e2381;
-      border-radius: 5px;
-      box-shadow: 5px 5px 5px #888888;
+      height:15px;
+      border-bottom:1px solid hsl(247, 100%, 82%);
     }
 
     .booked {
-      background-color: #ada3ff;
+      background-color: hsl(247, 100%, 82%);
     }
   </style>
 </head>
 
 <body>
-  {% for l in lessons %}
-  <div class="lesson">
-    <div class="lesson_date">{{l.lesson_date.date }}</div>
-    <div class="student">{{ l.student.last_name }}</div>
-    <div class="lesson_time">{{ l.lesson_date.time }}</div>
-  </div>
-{% endfor %}
-{{time_blocks}}
+
 <div class="calendar-week-view">
+  {% for day in week %}
   <div class="calendar-week-view-day">
-    <div class="calendar-week-view-day-header">{{ today }}</div>
+    <div class="calendar-week-view-day-header">{{day.day}}</div>
     <div class="calendar-week-view-day-events">
-      {% for block in time_blocks %} 
-        <div class="lesson {{block.booked}}">
+      {% for block in day.blocks %} 
+        <div class="lesson {{block.booked}}" style="height:{{block.duration}}px;">
           {{block.start}}
           {{block.student}}
+          {% if block.lesson_date.time.minute is 0 %}
           {{block.lesson_date.time}}
+          {% endif %}
         </div>
       {% endfor %}
     </div>
   </div>
+  {% endfor %}
 </div>
+
 
 </body>
 </html>
