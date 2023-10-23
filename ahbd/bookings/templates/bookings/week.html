@@ -63,6 +63,7 @@
 
     .booked {
       background-color: hsl(247, 100%, 82%);
+      border-bottom: 1px solid white;
     }
   </style>
 </head>
@@ -72,7 +73,7 @@
 <div class="calendar-week-view">
   {% for day in week %}
   <div class="calendar-week-view-day">
-    <div class="calendar-week-view-day-header">{{day.day}}</div>
+    <div class="calendar-week-view-day-header">{{day.day}} - {{day.week_date.day}}</div>
     <div class="calendar-week-view-day-events">
       {% for block in day.blocks %} 
         <div class="lesson {{block.booked}}" style="height:{{block.duration}}px;">
