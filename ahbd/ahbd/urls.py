@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from bookings.views import week_view
+from bookings.views import week_view, new_lesson
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("week/<int:week_number>", week_view)
+    path("week/<int:week_number>", week_view),
+    path('lessons/new/', new_lesson, name='new-lesson'),
 ]
