@@ -2,6 +2,15 @@ from django.shortcuts import render
 from datetime import datetime, timedelta
 from bookings.models import Lesson
 
+def new_lesson(request):
+     return render(
+        request,
+        "bookings/new_lesson.html",
+        {
+        }
+    )
+
+
 def week_view(request, week_number):
     # Render the weekly calendar view
     # Find the first day of the current week
