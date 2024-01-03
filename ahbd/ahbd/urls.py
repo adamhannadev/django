@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from bookings.views import calendar, index
+from bookings.views import calendar, home
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", index),
+    path("", home),
     path("week/", calendar)
 ]
