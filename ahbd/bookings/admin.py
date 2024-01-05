@@ -1,9 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from bookings.models import Lesson
-from bookings.models import Student
-from bookings.models import Teacher
+from bookings.models import Lesson, Student, Teacher
 
 class LessonsAdmin(admin.ModelAdmin):
     fields= ["lesson_date", "student", "teacher", "duration"]
