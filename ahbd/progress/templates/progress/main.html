@@ -4,8 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
+
 <body>
-    This is the main view template for progress app.
+
+
+
+<div id="header">
+    <h1>Progress Tracker</h1>
+</div>
+<div id="container">
+    <div id="sidebar">
+        <ul class="buttons">
+            <li class="button">Salsa</li>
+            <li class="button">Bachata</li>
+            <li class="button">West Coast Swing</li>
+            <li class="button">Kizomba</li>
+        </ul>
+    </div>
+    <div id="content">
+        <h3 style="text-align:center;">Content Here</h3>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color:#eedfff;
+    }
+    #header {
+        text-align: center;
+        border-bottom:1px solid gray;
+    }
+    #container {
+        display:flex;
+    }
+    #sidebar {
+        flex:auto;
+        width:30%;
+    }
+    #content{
+        flex-wrap: wrap;
+        width:70%;
+    }
+    .button{
+        background-color: #fff8d7;
+        border:1px solid gray;
+        list-style-type: none;
+        text-align:center;
+        margin-bottom:20px;
+        padding:10px;
+    }
+</style>
 </body>
 </html>
