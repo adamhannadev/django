@@ -16,15 +16,17 @@
 </div>
 <div id="container">
     <div id="sidebar">
+        {% block sidebar %}
         <ul class="buttons">
             <li class="button">Salsa</li>
             <li class="button">Bachata</li>
             <li class="button">West Coast Swing</li>
             <li class="button">Kizomba</li>
         </ul>
+        {% endblock %}
     </div>
     <div id="content">
-        <h3 style="text-align:center;">Content Here</h3>
+        {% block content %}{% endblock %}
     </div>
 </div>
 

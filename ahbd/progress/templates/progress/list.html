@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+    {% include sidebar %}
+    {% block content %}
+    <table>
+        <th>Element</th>
+        <th>Figure</th>
+        <th>Level</th>
+        {% for figure in figures %}
+        <tr>
+            <td>{{figure.element}}</td>
+            <td>{{figure.figure_name}}</td>
+            <td>{{figure.level}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
