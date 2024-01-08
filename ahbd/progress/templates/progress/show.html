@@ -1,0 +1,25 @@
+<style type="text/css">
+    .row{
+        flex:auto;
+    }
+</style>
+{% extends "progress/main.html" %}
+    {% include sidebar %}
+    {% block content %}
+        <div class="row">
+            <div>Figure Name: {{figure.figure_name}}</div>
+            <div>Element: {{figure.element}}</div>
+        </div>
+        <div class="row">
+            Leader's Description: {{figure.leader_description}}
+        </div>
+        <div class="row">
+            Follower's Description: {{figure.follower_description}}
+        </div>
+        <div class="row">
+            <div class="col">Dance: {{figure.dance}}</div>
+            <div class="col">Level: {{figure.level}}</div>
+        </div>
+    {% endblock %}
+
+    

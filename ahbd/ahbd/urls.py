@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from bookings.views import calendar, home
-from progress.views import main, list
+from progress.views import main, list, show
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", main),
+    path("show/<int:id>", show),
     path("list/", list),
     path("week/", calendar)
 ]

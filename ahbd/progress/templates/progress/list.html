@@ -1,16 +1,35 @@
-{% extends "main.html" %}
+<style type="text/css">
+    .table{
+        margin-top:20px;
+        border:1px solid gray;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .action{
+        border:1px solid gray;
+        text-align: center;
+    }
+</style>
+{% extends "progress/main.html" %}
     {% include sidebar %}
     {% block content %}
-    <table>
+    <table class="table">
         <th>Element</th>
         <th>Figure</th>
         <th>Level</th>
         {% for figure in figures %}
         <tr>
             <td>{{figure.element}}</td>
-            <td>{{figure.figure_name}}</td>
+            <td><a href="/show/{{figure.id}}">{{figure.figure_name}}</a></td>
             <td>{{figure.level}}</td>
+            <td class="action"> {{figure.id}} - EDIT</td>
+            <td class="action"> {{figure.id}} - DELETE</td>
         </tr>
         {% endfor %}
+        <tr>
+            <td class="action">ADD</td>
+        </tr>
     </table>
     {% endblock %}
+
+    
