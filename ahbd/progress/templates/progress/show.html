@@ -1,12 +1,7 @@
-<style type="text/css">
-    .row{
-        display: flex;
-    }
-</style>
+
 {% extends "progress/main.html" %}
-    {% include sidebar %}
     {% block content %}
-        <div class="row" style="justify-content: space-around;">
+        <!-- <div class="row" style="justify-content: space-around;">
             <div><strong>Figure Name: </strong>{{figure.figure_name}}</div>
             <div><strong>Element:</strong> {{figure.element}}</div>
         </div>
@@ -23,7 +18,24 @@
         <div class="row" style="justify-content: space-around; align-self:flex-end;">
             <div class="col"><strong>Dance:</strong> {{figure.dance}}</div>
             <div class="col"><strong>Level:</strong> {{figure.level}}</div>
-        </div>
+        </div> -->
+        <div class="card ">
+            <div class="card-content">
+              <h3>{{figure.figure_name}}</h3>
+            </div>
+            <div class="card-tabs">
+              <ul class="tabs tabs-fixed-width">
+                <li class="tab"><a href="#test4">Test 1</a></li>
+                <li class="tab"><a class="active" href="#test5">Test 2</a></li>
+                <li class="tab"><a href="#test6">Test 3</a></li>
+              </ul>
+            </div>
+            <div class="card-content grey lighten-4">
+              <div id="test4">Test 1</div>
+              <div id="test5">Test 2</div>
+              <div id="test6">Test 3</div>
+            </div>
+          </div>
     {% endblock %}
 
     
