@@ -1,15 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AHBD Progress Tracker</title>
 
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+   
+    <link type="text/css" rel="stylesheet" href="{% static '/materialize/css/materialize.min.css' %}"  media="screen,projection"/>
+  
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
 </head>
-
 <body>
-
-
 
 <div id="header">
     <h1>Progress Tracker</h1>
@@ -46,8 +53,12 @@
         width:30%;
     }
     #content{
-        flex-wrap: wrap;
+        border:1px solid gray;
+        background-color: #fff8d7;
+        flex:auto;
         width:70%;
+        margin:16px 20px 20px 20px;
+        padding:10px;
     }
     .button{
         background-color: #fff8d7;
@@ -58,5 +69,8 @@
         padding:10px;
     }
 </style>
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="{% static 'materialize/js/materialize.min.js'%}"></script>
+    
 </body>
 </html>

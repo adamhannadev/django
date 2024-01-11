@@ -22,7 +22,7 @@ from progress.views import main, list, show
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", main),
-    path("show/<int:id>", show),
-    path("list/", list),
+    path("progress/show/<int:id>", show),
+    path("progress/list/", list),
     path("week/", calendar)
 ]

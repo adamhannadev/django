@@ -1,24 +1,28 @@
 <style type="text/css">
     .row{
-        flex:auto;
+        display: flex;
     }
 </style>
 {% extends "progress/main.html" %}
     {% include sidebar %}
     {% block content %}
-        <div class="row">
-            <div>Figure Name: {{figure.figure_name}}</div>
-            <div>Element: {{figure.element}}</div>
+        <div class="row" style="justify-content: space-around;">
+            <div><strong>Figure Name: </strong>{{figure.figure_name}}</div>
+            <div><strong>Element:</strong> {{figure.element}}</div>
         </div>
         <div class="row">
-            Leader's Description: {{figure.leader_description}}
+            <strong>Leader's Description:</strong>
         </div>
         <div class="row">
-            Follower's Description: {{figure.follower_description}}
+            {{figure.leader_description}}
         </div>
         <div class="row">
-            <div class="col">Dance: {{figure.dance}}</div>
-            <div class="col">Level: {{figure.level}}</div>
+            <strong>Follower's Description:</strong>
+        </div>
+        <div class="row" style="flex-grow:1;"> {{figure.follower_description}}</div>
+        <div class="row" style="justify-content: space-around; align-self:flex-end;">
+            <div class="col"><strong>Dance:</strong> {{figure.dance}}</div>
+            <div class="col"><strong>Level:</strong> {{figure.level}}</div>
         </div>
     {% endblock %}
 

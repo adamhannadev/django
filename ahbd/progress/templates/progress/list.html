@@ -1,6 +1,5 @@
 <style type="text/css">
     .table{
-        margin-top:20px;
         border:1px solid gray;
         margin-left:auto;
         margin-right:auto;
@@ -20,7 +19,7 @@
         {% for figure in figures %}
         <tr>
             <td>{{figure.element}}</td>
-            <td><a href="/show/{{figure.id}}">{{figure.figure_name}}</a></td>
+            <td><a href="/progress/show/{{figure.id}}">{{figure.figure_name}}</a></td>
             <td>{{figure.level}}</td>
             <td class="action"> {{figure.id}} - EDIT</td>
             <td class="action"> {{figure.id}} - DELETE</td>
