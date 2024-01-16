@@ -26,15 +26,19 @@
             </div>
             <div class="card-tabs">
               <ul class="tabs tabs-fixed-width">
-                <li class="tab"><a href="#test4">Test 1</a></li>
-                <li class="tab"><a class="active" href="#test5">Test 2</a></li>
-                <li class="tab"><a href="#test6">Test 3</a></li>
+                <li class="tab"><a href="#leader">Leader</a></li>
+                <li class="tab"><a href="#follower">Follower</a></li>
               </ul>
             </div>
             <div class="card-content grey lighten-4">
-              <div id="test4">Test 1</div>
-              <div id="test5">Test 2</div>
-              <div id="test6">Test 3</div>
+              <div id="leader">
+              <h5>Leader's Role</h4>
+              {{figure.leader_description}}
+              </div>
+              <div id="follower">
+                <h5>Follower's Role</h4>
+                {{figure.follower_description}}
+              </div>
             </div>
           </div>
     {% endblock %}
