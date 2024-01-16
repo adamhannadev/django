@@ -1,28 +1,12 @@
 
 {% extends "progress/main.html" %}
     {% block content %}
-        <!-- <div class="row" style="justify-content: space-around;">
-            <div><strong>Figure Name: </strong>{{figure.figure_name}}</div>
-            <div><strong>Element:</strong> {{figure.element}}</div>
-        </div>
-        <div class="row">
-            <strong>Leader's Description:</strong>
-        </div>
-        <div class="row">
-            {{figure.leader_description}}
-        </div>
-        <div class="row">
-            <strong>Follower's Description:</strong>
-        </div>
-        <div class="row" style="flex-grow:1;"> {{figure.follower_description}}</div>
-        <div class="row" style="justify-content: space-around; align-self:flex-end;">
-            <div class="col"><strong>Dance:</strong> {{figure.dance}}</div>
-            <div class="col"><strong>Level:</strong> {{figure.level}}</div>
-        </div> -->
-        
         <div class="card ">
             <div class="card-content">
               <h3>{{figure.figure_name}}</h3>
+              <div><b>Level: </b>{{figure.level}}</div>
+              <div><b>Dance: </b>{{figure.dance}}</div>
+              <div><b>Element: </b>{{figure.element}}</div>
             </div>
             <div class="card-tabs">
               <ul class="tabs tabs-fixed-width">
